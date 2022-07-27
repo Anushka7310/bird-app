@@ -3,19 +3,17 @@
     margin: 0;
     box-sizing: border-box;
   }
-  html {
-    font-family: "Montserrat", sans-serif;
-  }
-  body {
-    background: #eee;
-    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-    padding: 0 16px;
+
+  .menuIcon{
+    margin-right: 10px;
   }
   
   header {
+    display: flex;
+    justify-content: space-between;
     background-color: #1e552f;
     margin: auto -16px;
-    padding: 16px 32px;
+    padding: 12px 40px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   
@@ -24,4 +22,12 @@
     font-family: "McLaren", cursive;
     font-weight: 200;
   }
+
+  .rateusbutton {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+  }
   
+ 

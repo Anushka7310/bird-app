@@ -7,8 +7,11 @@ function Header() {
     <header>
 
         <h1>
-        <MenuIcon />
+        <MenuIcon className="menuIcon" />
         Bird App</h1>
+        <button className="rateusbutton">
+            Rate us
+        </button>
     </header>
     );
 }
