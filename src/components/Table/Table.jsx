@@ -76,7 +76,7 @@ const Table = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <h1 id="title">Manage birds</h1>
       <table id="birds">
         <thead>
@@ -84,7 +84,7 @@ const Table = () => {
         </thead>
         <tbody>{renderBody()}</tbody>
       </table>
-    </>
+    </div>
   );
 };
 export default Table;

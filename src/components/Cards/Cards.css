@@ -1,0 +1,13 @@
+.card_container{
+    margin: 10px 0px;
+}
+
+.card_left_panel{
+    display: flex;
+    align-content: flex-start;
+}
+
+.card_image{
+    height: auto;
+    width: 10px
+}

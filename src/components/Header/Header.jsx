@@ -2,12 +2,12 @@ import React from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import "./Header.css";
 
-function Header() {
+function Header({toggleGallary}) {
     return (
     <header>
 
         <h1>
-        <MenuIcon className="menuIcon" />
+        <MenuIcon className="menuIcon" onClick={toggleGallary} />
         Bird App</h1>
         <button className="rateusbutton">
             Rate us

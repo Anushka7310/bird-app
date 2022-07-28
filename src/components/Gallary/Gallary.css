@@ -1,0 +1,15 @@
+.gallary_container{
+    width: 100%;
+}
+
+
+.gallary_heading{
+    font-size: 40px;
+}
+
+.gallary_cards {
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+}
