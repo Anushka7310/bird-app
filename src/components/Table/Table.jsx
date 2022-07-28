@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Table.css";
+import Form from "../Form/Form";
 
-const URL = "http://localhost:9000/birds";
+const Table = () => {
+  const url = "http://localhost:9000/birds";
+  let getData;
 
-function useAPi(url) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     getData();
   }, []);
 
-  const getData = async () => {
+  getData = async () => {
     const response = await axios.get(url);
     console.log(response);
     setData(response.data);
@@ -23,12 +25,17 @@ function useAPi(url) {
       setData(del);
     });
   };
+  const [edit, setEdit] = useState(false)
+  const [value, setValue] = useState({});
+  const [showForm, setShowForm] = useState(false);
 
-  return { data, removeData };
-}
-
-const Table = () => {
-  const { data, removeData } = useAPi(URL);
+  const editData = (id) => {
+    const val = data.find((val) => val._id === id);
+    console.log(val)
+    setValue(val)
+    setEdit(true)
+    setShowForm(true)
+  };
 
   const renderHeader = () => {
     let headerElement = [
@@ -64,6 +71,11 @@ const Table = () => {
               <td>{order}</td>
               <td>{scientificName}</td>
               <td className="operation">
+                <button className="button" onClick={() => editData(_id)}>
+                  Edit
+                </button>
+              </td>
+              <td className="operation">
                 <button className="button" onClick={() => removeData(_id)}>
                   Delete
                 </button>
@@ -79,13 +91,26 @@ const Table = () => {
     <div className="container">
       <div className="table_header">
         <div className="table_title_container">
-         <h2 id="title" className="table_title">Manage birds</h2>
-         <div className="table_subtitle">Manage all species of birds and their information</div>
+          <h2 id="title" className="table_title">
+            Manage birds
+          </h2>
+          <div className="table_subtitle">
+            Manage all species of birds and their information
+          </div>
         </div>
-       
-        <button className="add_btn">+ Add</button>
+
+        <button className="add_btn" onClick={() => setShowForm(true)}>
+          + Add
+        </button>
       </div>
-      <hr/>
+      <hr />
+      {showForm ? (
+        <Form title="add" setShowForm={setShowForm} getData={getData} />
+      ) : null}
+
+      {showForm && edit ? (
+        <Form title="edit" setShowForm={setShowForm} getData={getData} value={value} isEdit={true} />
+      ) : null}
 
       <table id="birds">
         <thead>
