@@ -13,7 +13,7 @@ function useAPi(url) {
 
   const getData = async () => {
     const response = await axios.get(url);
-    console.log(response)
+    console.log(response);
     setData(response.data);
   };
 
@@ -77,7 +77,16 @@ const Table = () => {
 
   return (
     <div className="container">
-      <h1 id="title">Manage birds</h1>
+      <div className="table_header">
+        <div className="table_title_container">
+         <h2 id="title" className="table_title">Manage birds</h2>
+         <div className="table_subtitle">Manage all species of birds and their information</div>
+        </div>
+       
+        <button className="add_btn">+ Add</button>
+      </div>
+      <hr/>
+
       <table id="birds">
         <thead>
           <tr>{renderHeader()}</tr>

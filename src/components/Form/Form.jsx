@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Dialog, DialogActions,  DialogContent, DialogContentText, DialogTitle } from "@mui/material";
-const Add = () => {
+const Form = () => {
     return <div>
         <Dialog open ={true} >
             <DialogTitle> This is Anushka</DialogTitle>
@@ -11,4 +11,4 @@ const Add = () => {
     </div>
 }
 
-export default Add;
+export default Form;

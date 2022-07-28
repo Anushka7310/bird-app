@@ -10,7 +10,21 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: center;
+  width: 100%;
+}
+
+.add_btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100px;
+  height: 45px;
+  margin-top: 10px;
 }
 
 #title {
@@ -20,6 +34,7 @@ body {
 #birds {
   border-collapse: collapse;
   border: 3px solid #ddd;
+  margin: 10px 50px;
 }
 
 #birds td,
@@ -58,4 +73,31 @@ body {
 
 .button:active {
   border: 1px solid blue;
+}
+
+
+.table_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 50px;
+}
+
+.table_title_container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.table_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+
+
+.table_subtitle {
+margin-top: 5px;
 }
