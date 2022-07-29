@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Form.css";
 import {
     ButtonBase,
   Dialog,
@@ -44,10 +45,10 @@ const Form = ({ title, setShowForm, getData, value, isEdit=false }) => {
   const [spottedLocation, setSpottedLocation] = useState(value?.spottedLocation || "");
 
   return (
-    <div>
+    <div className= "form">
       <Dialog open={true}>
         <DialogTitle> {title}</DialogTitle>
-        <DialogContent>
+        <DialogContent className="form_box">
           <form onSubmit={handleSubmit}>
             <label>
               Common Name:
@@ -118,7 +119,7 @@ const Form = ({ title, setShowForm, getData, value, isEdit=false }) => {
 
             <input type="submit" value="Submit" />
           </form>
-           <button onClick={()=>{setShowForm(false)}}>cancel</button>
+           <button className="form_button" onClick={()=>{setShowForm(false)}}>cancel</button>
         </DialogContent>
       </Dialog>
     </div>

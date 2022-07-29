@@ -71,12 +71,12 @@ const Table = () => {
               <td>{order}</td>
               <td>{scientificName}</td>
               <td className="operation">
-                <button className="button" onClick={() => editData(_id)}>
+                <button className="button grey_button" onClick={() => editData(_id)}>
                   Edit
                 </button>
               </td>
               <td className="operation">
-                <button className="button" onClick={() => removeData(_id)}>
+                <button className="button red_button" onClick={() => removeData(_id)}>
                   Delete
                 </button>
               </td>
